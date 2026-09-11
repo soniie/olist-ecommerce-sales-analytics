@@ -57,8 +57,6 @@ The data was imported into PostgreSQL, cleaned and integrated into an analytical
 | Tool / Technology | Purpose |
 |---|---|
 | **PostgreSQL** | Data storage, cleaning, joins and analysis |
-| **pgAdmin** | PostgreSQL database management |
-| **SQL** | Data preparation and business analysis |
 | **Python** | Data cleaning and exploratory data analysis |
 | **Pandas** | Data manipulation |
 | **NumPy** | Numerical operations |
