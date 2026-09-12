@@ -179,6 +179,7 @@ The final Power BI dashboard provides a compact view of:
 ### Dashboard Preview
 
 
-...text
-https://github.com/soniie/olist-ecommerce-sales-analytics/blob/main/dashboard/olist%20sales.png
+### Dashboard Preview
+
+![Olist Sales Analytics Dashboard](dashboard/olist%20sales.png)
 ...
