@@ -3,6 +3,10 @@
 > An end-to-end e-commerce analytics project using SQL, Python, and Power BI to analyze sales performance, customers, products, payments, geography, and freight costs.
 
 ---
+### Dashboard Preview
+
+![Olist Sales Analytics Dashboard](dashboard/olist%20sales.png)
+...
 
 ## Overview
 
@@ -176,10 +180,5 @@ The final Power BI dashboard provides a compact view of:
 - Freight-cost patterns
 - Customer repeat-purchase behavior
 
-### Dashboard Preview
 
 
-### Dashboard Preview
-
-![Olist Sales Analytics Dashboard](dashboard/olist%20sales.png)
-...
