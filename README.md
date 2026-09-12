@@ -2,7 +2,7 @@
 
 > End-to-end e-commerce analytics project using SQL, Python, and Power BI to transform transactional data into business insights.
 
-![Dashboard Preview](dashboard/dashboard_preview.png)
+![Dashboard Preview](dashboard/dashboard preview.png)
 
 ---
 
