@@ -1,184 +1,416 @@
 # Olist E-Commerce Sales Analytics
 
-> An end-to-end e-commerce analytics project using SQL, Python, and Power BI to analyze sales performance, customers, products, payments, geography, and freight costs.
+> End-to-end e-commerce analytics project using SQL, Python, and Power BI to transform transactional data into business insights.
+
+![Dashboard Preview](dashboard/dashboard_preview.png)
 
 ---
-### Dashboard Preview
-
-![Olist Sales Analytics Dashboard](dashboard/olist%20sales.png)
-...
 
 ## Overview
 
-This project analyzes the **Olist Brazilian E-Commerce dataset** to understand marketplace performance across revenue, orders, customers, product categories, payment methods, states, and logistics.
+This project analyzes the **Brazilian E-Commerce Public Dataset by Olist** to understand sales performance, customer behavior, product categories, payment methods, geographic demand, and freight costs.
 
-The project follows a complete analytics workflow:
+The project follows an end-to-end analytics workflow, starting from raw transactional data and progressing through database analysis, exploratory data analysis, and business intelligence reporting.
 
-**Business Understanding → Data Preparation → SQL Analysis → Python EDA → Power BI Dashboard → Business Insights**
+### Project Workflow
 
-The final output is a single-page Power BI dashboard designed to present key business metrics and insights in a clear and professional way.
+**Raw Data → PostgreSQL → SQL Analysis → Python EDA → Power BI → Business Insights**
+
+The final output is a single-page Power BI dashboard designed to provide a concise view of overall e-commerce performance.
 
 ---
 
 ## Problem Statement
 
-E-commerce businesses generate large amounts of transactional data across multiple tables. Without proper analysis, it can be difficult to understand overall business performance and identify important trends.
+E-commerce businesses generate large volumes of transactional data across multiple related tables.
 
-This project aims to analyze the Olist e-commerce data and answer questions such as:
+The objective of this project is to combine and analyze this data to answer important business questions such as:
 
-- How much revenue is being generated?
+- What is the overall revenue generated?
 - How many orders and customers does the platform have?
 - What is the average order value?
 - Which product categories contribute most to revenue?
-- Which states have the highest order volumes?
+- Which states generate the highest number of orders?
 - Which payment methods are most commonly used?
 - How does freight cost vary across product categories?
-- What patterns can be observed in sales over time?
-- What does customer repeat-purchase behavior look like?
+- How do sales change over time?
+- What proportion of customers make repeat purchases?
 
 ---
 
 ## Dataset
 
-The project uses the **Olist Brazilian E-Commerce dataset**, which contains information about:
+### Brazilian E-Commerce Public Dataset by Olist
 
-- Customers
+The dataset contains approximately **100,000 orders from 2016–2018** across multiple marketplaces in Brazil.
+
+It includes information related to:
+
 - Orders
-- Order Items
+- Customers
 - Products
+- Sellers
+- Order items
 - Payments
 - Reviews
-- Product Category Translations
+- Product categories
+- Customer and seller locations
 
-The data was imported into PostgreSQL, cleaned and integrated into an analytical dataset, then explored using Python and visualized using Power BI.
+### Dataset Source
 
-> **Note:** The original raw CSV files are not included in this repository.
+The original dataset is available on Kaggle:
+
+**Brazilian E-Commerce Public Dataset by Olist**
+
+https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+### Dataset Tables Used
+
+| Table | Description |
+|---|---|
+| `customers` | Customer information and location |
+| `orders` | Order status and timestamps |
+| `order_items` | Products purchased in each order |
+| `products` | Product information and attributes |
+| `payments` | Payment methods and payment values |
+| `reviews` | Customer review information |
+| `product_category_name_translation` | Portuguese-to-English category translation |
+
+> The original raw CSV files are not stored in this repository. They can be downloaded from the original Kaggle source above.
 
 ---
 
-## Tools and Technologies
+## Tools & Technologies
 
-| Tool / Technology | Purpose |
+| Technology | Purpose |
 |---|---|
-| **PostgreSQL** | Data storage, cleaning, joins and analysis |
-| **Python** | Data cleaning and exploratory data analysis |
+| **PostgreSQL** | Data storage, integration and analysis |
+| **pgAdmin** | Database management |
+| **SQL** | Data cleaning, joins and business analysis |
+| **Python** | Exploratory data analysis |
 | **Pandas** | Data manipulation |
 | **NumPy** | Numerical operations |
-| **Matplotlib** | Data visualization during EDA |
-| **Power BI** | Dashboard creation and visualization |
+| **Matplotlib** | EDA visualization |
+| **Power BI** | Dashboard and reporting |
 | **DAX** | Measures and calculated fields |
 | **GitHub** | Project documentation and version control |
 
 ---
 
-## Methods
+## Project Methodology
 
-### 1. Data Preparation
+### 1. Business Understanding
 
-The Olist dataset was imported into PostgreSQL and organized into related tables:
+The project began by identifying the key business areas to analyze:
 
-- `customers`
-- `orders`
-- `order_items`
-- `products`
-- `payments`
-- `reviews`
-- `product_category_name_translation`
-
-The tables were cleaned and joined to create a master analytical dataset for further analysis.
+- Sales performance
+- Customer activity
+- Product categories
+- Geographic demand
+- Payment behavior
+- Freight costs
+- Repeat purchasing
 
 ---
 
-### 2. SQL Analysis
+### 2. Data Preparation
 
-SQL was used to:
+The Olist datasets were imported into PostgreSQL and organized into related tables.
 
-- Join related tables
-- Clean and prepare the data
-- Handle missing and duplicate records
-- Create analytical fields
-- Calculate revenue and order metrics
-- Analyze product categories
-- Analyze state-wise order distribution
-- Analyze payment methods
-- Analyze freight costs
-- Prepare the master dataset for Python and Power BI
+The data was prepared by:
 
----
+- Checking data quality
+- Handling missing values
+- Identifying duplicate records
+- Converting date fields
+- Joining related tables
+- Translating product categories
+- Creating analytical fields
 
-### 3. Python Exploratory Data Analysis
-
-Python was used to further inspect and explore the cleaned dataset.
-
-The analysis included:
-
-- Checking missing values
-- Checking duplicate records
-- Converting and working with date fields
-- Exploring revenue patterns
-- Analyzing order behavior
-- Exploring product category performance
-- Examining customer patterns
-- Exploring geographic trends
+A master analytical dataset was then created for downstream analysis.
 
 ---
 
-### 4. Power BI Dashboard
+### 3. SQL Analysis
 
-The final analysis was presented through a **single-page Power BI dashboard**.
+SQL was used as the main data preparation and analysis layer.
 
-### Key Performance Indicators
+Key tasks included:
 
-- **Total Revenue**
-- **Total Orders**
-- **Total Customers**
-- **Average Order Value**
-- **Repeat Customer Rate**
+- Joining customers, orders, products, payments and reviews
+- Calculating revenue
+- Counting orders and customers
+- Analyzing product categories
+- Analyzing state-wise order distribution
+- Analyzing payment methods
+- Calculating freight costs
+- Preparing data for Python and Power BI
+
+---
+
+### 4. Python Exploratory Data Analysis
+
+Python was used to explore the cleaned analytical dataset.
+
+The EDA focused on:
+
+- Missing values
+- Duplicate records
+- Data types
+- Date ranges
+- Revenue trends
+- Order behavior
+- Product category performance
+- Customer activity
+- Geographic distribution
+
+Libraries used:
+
+```text
+pandas
+numpy
+matplotlib
+```
+
+---
+
+### 5. Power BI Dashboard
+
+The final analysis was converted into a one-page Power BI dashboard.
+
+### KPI Cards
+
+The dashboard contains:
+
+- **Total Revenue:** ~R$13.21M
+- **Total Orders:** ~99K
+- **Total Customers:** ~95K
+- **Average Order Value:** ~R$133.93
+- **Repeat Customer Rate:** ~3.05%
 
 ### Dashboard Visuals
 
+The dashboard includes:
+
 - **Sales Over Time**
-- **Revenue by Category**
+- **Revenue by Product Category**
 - **Top States by Orders**
 - **Payment Method Distribution**
 - **Freight Cost % by Category**
 - **Key Takeaways**
 
-The dashboard was designed to follow a simple analytical story:
-
-**Performance → Trends → Categories → Geography → Payments → Logistics**
-
----
-
-## Key Insights
-
-The analysis highlights the following business patterns:
-
-1. **Sales performance changes over time**, allowing periods of stronger and weaker activity to be identified.
-
-2. **Revenue is distributed unevenly across product categories**, making category-level performance useful for understanding major revenue contributors.
-
-3. **Order volume varies across Brazilian states**, showing geographic concentration in marketplace activity.
-
-4. **Customers use multiple payment methods**, providing insight into purchasing preferences.
-
-5. **Freight cost as a percentage of revenue differs across product categories**, which can have implications for pricing and profitability.
-
-6. **The repeat-customer rate is relatively low**, suggesting an opportunity to improve customer retention and encourage repeat purchases.
+The dashboard was intentionally kept to a single page to make the main business story easy to understand.
 
 ---
 
 ## Dashboard / Output
 
-The final Power BI dashboard provides a compact view of:
+The final output is a **single-page Power BI dashboard** designed to present the most important e-commerce performance metrics in a clear and concise format.
 
-- Overall sales performance
-- Sales trends
-- Category performance
-- State-wise order distribution
+### Dashboard Flow
+
+**Performance → Trends → Categories → Geography → Payments → Logistics**
+
+### Dashboard Preview
+
+![Olist E-Commerce Sales Analytics Dashboard](dashboard/dashboard_preview.png)
+
+---
+
+## Key Insights
+
+### 1. Sales Performance
+
+Sales activity changes over time, making the sales trend useful for understanding periods of stronger and weaker marketplace performance.
+
+### 2. Category Performance
+
+Revenue is distributed unevenly across product categories, allowing high-performing categories to be identified and compared.
+
+### 3. Geographic Demand
+
+Order volume varies considerably across Brazilian states, showing that marketplace activity is geographically concentrated.
+
+### 4. Payment Behavior
+
+Customers use multiple payment methods, providing insight into purchasing and transaction preferences.
+
+### 5. Freight Cost
+
+Freight cost as a percentage of revenue varies across product categories.
+
+Categories with relatively high freight-to-revenue ratios may require closer attention to pricing, shipping strategy, and profitability.
+
+### 6. Customer Retention
+
+The repeat customer rate is approximately **3.05%**, indicating that repeat purchasing represents a relatively small portion of the customer base.
+
+This highlights a potential opportunity for stronger customer retention and repeat-purchase strategies.
+
+---
+
+## Project Structure
+
+```text
+olist-ecommerce-sales-analytics/
+│
+├── README.md
+│
+├── dashboard/
+│   ├── Olist_Ecommerce_Sales_Analytics.pbix
+│   └── dashboard_preview.png
+│
+├── python/
+│   └── Olist_Sales_EDA.ipynb
+│
+├── sql/
+│   └── olist_sales_analysis.sql
+│
+└── data/
+    └── README.md
+```
+
+---
+
+## How to Run the Project
+
+### Step 1 — Download the Dataset
+
+Download the original **Brazilian E-Commerce Public Dataset by Olist** from Kaggle:
+
+https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+Extract the CSV files locally.
+
+The raw dataset is not included in this repository.
+
+---
+
+### Step 2 — Set Up PostgreSQL
+
+Create a PostgreSQL database and import the required Olist CSV files.
+
+The project uses the following tables:
+
+```text
+customers
+orders
+order_items
+products
+payments
+reviews
+product_category_name_translation
+```
+
+---
+
+### Step 3 — Run the SQL Analysis
+
+Open:
+
+```text
+sql/olist_sales_analysis.sql
+```
+
+Run the SQL queries in PostgreSQL / pgAdmin.
+
+The SQL workflow prepares the data required for analysis and reporting.
+
+---
+
+### Step 4 — Run the Python Notebook
+
+Open:
+
+```text
+python/Olist_Sales_EDA.ipynb
+```
+
+Run the notebook cells in order.
+
+Install the required libraries if needed:
+
+```bash
+pip install pandas numpy matplotlib
+```
+
+---
+
+### Step 5 — Open the Power BI Dashboard
+
+Open:
+
+```text
+dashboard/Olist_Ecommerce_Sales_Analytics.pbix
+```
+
+If required, update the PostgreSQL data source to match your local database connection.
+
+---
+
+## Results & Conclusion
+
+This project demonstrates how raw e-commerce transaction data can be transformed into a structured analytics workflow.
+
+Using **SQL, Python, and Power BI**, the project moves from data preparation and exploration to visual storytelling and business insights.
+
+The final dashboard provides a concise view of:
+
+- Revenue performance
+- Order activity
+- Customer activity
+- Category contribution
+- Geographic demand
 - Payment behavior
 - Freight-cost patterns
-- Customer repeat-purchase behavior
+- Customer retention opportunities
+
+The project demonstrates an end-to-end approach to turning transactional data into information that can support business decision-making.
+
+---
+
+## Limitations
+
+- The analysis is based on historical Olist marketplace data from 2016–2018.
+- The dataset represents Olist marketplace activity and may not represent the entire Brazilian e-commerce market.
+- The analysis is descriptive and does not attempt to predict future sales.
+- Profitability cannot be measured directly because the dataset does not contain complete business cost information.
+
+---
+
+## Future Improvements
+
+Possible extensions of this project include:
+
+- Sales forecasting
+- Customer segmentation
+- Customer lifetime value analysis
+- Product recommendation systems
+- Delivery-time analysis
+- Seller performance analysis
+- Profitability analysis
+- Advanced customer retention analysis
+
+---
+
+## Author
+
+**Soni Kumari**
+
+B.Sc. Computer Science & Data Analytics  
+IIT Patna
+
+**Skills:** SQL • Python • Power BI • Data Analytics • UI/UX Design
+
+---
+
+## Acknowledgements
+
+Dataset provided by **Olist** through the Brazilian E-Commerce Public Dataset.
+
+Dataset source:
+
+https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
 
 
