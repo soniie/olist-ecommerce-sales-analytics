@@ -2,7 +2,7 @@
 
 > End-to-end e-commerce analytics project using SQL, Python, and Power BI to transform transactional data into business insights.
 
-![Dashboard Preview](dashboard/dashboard preview.png)
+![Dashboard Preview](https://github.com/soniie/olist-ecommerce-sales-analytics/blob/main/dashboard/dashboard%20preview.png)
 
 ---
 
