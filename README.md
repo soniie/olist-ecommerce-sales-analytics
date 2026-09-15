@@ -211,11 +211,6 @@ The final output is a **single-page Power BI dashboard** designed to present the
 
 **Performance → Trends → Categories → Geography → Payments → Logistics**
 
-### Dashboard Preview
-
-![Olist E-Commerce Sales Analytics Dashboard](dashboard/dashboard_preview.png)
-
----
 
 ## Key Insights
 
